@@ -1,6 +1,5 @@
 "use client";
 
-import {AuthLoading, Authenticated, Unauthenticated} from "convex/react";
 import {SignInButton, UserButton} from "@clerk/nextjs";
 
 import {Loading} from "@/components/shared/Loading";
@@ -32,21 +31,7 @@ const Header = () => {
             <MobileMenu />
           </div>
           <div className="flex gap-4 justify-end items-center flex-1">
-            <AuthLoading>
-              <Loading />
-            </AuthLoading>
-            <Unauthenticated>
-              <ThemeDropdown />
-              <SignInButton mode="modal" afterSignInUrl="/dashboard" />
-            </Unauthenticated>
-            <Authenticated>
-              <div className="flex justify-center items-center gap-2">
-                <DrawerWithDialog />
-                <FeedbackSheet />
-                <ThemeDropdown />
-                <UserButton afterSignOutUrl="/" />
-              </div>
-            </Authenticated>
+            
           </div>
         </div>
       </nav>

@@ -21,7 +21,6 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {useState} from "react";
-import {useMutation} from "convex/react";
 import {api} from "@/convex/_generated/api";
 
 import {MessageCircleCode} from "lucide-react";
@@ -29,7 +28,6 @@ import {FEEDBACK_LABELS} from "@/lib/constants";
 import {Id} from "@/convex/_generated/dataModel";
 import {Textarea} from "@/components/ui/textarea";
 import {useParams} from "next/navigation";
-import {TooltipContainer} from "@/components/shared/Toolip";
 import {useToast} from "@/components/ui/use-toast";
 
 const formSchema = z.object({
@@ -54,7 +52,7 @@ export default function FeedbackSheet() {
     resolver: zodResolver(formSchema),
   });
 
-  const addFeedback = useMutation(api.feedback.addFeedback);
+  //const addFeedback = useMutation(api.feedback.addFeedback);
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     form.reset();
@@ -62,11 +60,11 @@ export default function FeedbackSheet() {
 
     const {label, message} = values;
 
-    await addFeedback({
-      planId: planId ? (planId as Id<"plan">) : undefined,
-      label,
-      message,
-    });
+    // await addFeedback({
+    //   planId: planId ? (planId as Id<"plan">) : undefined,
+    //   label,
+    //   message,
+    // });
 
     toast({
       description: "Feedback submitted!",
@@ -75,13 +73,7 @@ export default function FeedbackSheet() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <TooltipContainer text="Feedback">
-        <SheetTrigger asChild>
-          <Button size="sm" variant="ghost">
-            <MessageCircleCode className="w-4 h-4" />
-          </Button>
-        </SheetTrigger>
-      </TooltipContainer>
+      
       <SheetContent>
         <SheetHeader>
           <SheetTitle>We Value Your Feedback!</SheetTitle>
