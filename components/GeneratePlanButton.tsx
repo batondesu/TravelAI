@@ -1,11 +1,16 @@
 "use client";
 import {Button} from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 
 const GeneratePlanButton = () => {
+  const router = useRouter()
+  const handleClick = () => {
+    router.push('/plan')
+  }
 
   return (
-    <Button
+    <Button onClick={(e) => handleClick()}
       aria-label="generate plan"
       variant="default"
       className="bg-blue-500 text-white

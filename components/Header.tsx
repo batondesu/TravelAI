@@ -1,10 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import {SignInButton, UserButton} from "@clerk/nextjs";
-
-import MobileMenu from "@/components/MobileMenu";
-import PlanComboBox from "@/components/plan/PlanComboBox";
 import {navlinks} from "@/lib/constants";
 import {cn} from "@/lib/utils";
 import {MapPinIcon} from "lucide-react";
@@ -47,8 +43,8 @@ const Header = () => {
                     </li>
                   ))}
                   <li className="hover:underline cursor-pointer">
-                    <Link href="dashboard" scroll>
-                      Dashboard
+                    <Link href="/plan" scroll>
+                      Plan
                     </Link>
                   </li>
                 </>
