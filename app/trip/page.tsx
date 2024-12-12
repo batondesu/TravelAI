@@ -1,27 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from "react";
-import {
-    SelectModelOptions,
-    SelectPlace,
-    SelectBudgetOptions,
-    SelectNoOfPersons,
-} from '@/components/constants/Options';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogClose,
-    DialogFooter,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { FcGoogle } from "react-icons/fc";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { Button } from "@/components/ui/button";
-import toast from "react-hot-toast";
-
+import { Suspense } from 'react'
 import { useRouter, useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Itinerary from "@/components/sections/Itinerary";
@@ -43,7 +23,7 @@ interface Day {
     evening: TimeLine[]
 }
 
-const Trip: React.FC = () => {
+const ListTrip: React.FC = () => {
     const params = useSearchParams()
     const [list, setList] = useState<Day[]>([])
     const [link, setLink] = useState("")
@@ -66,11 +46,15 @@ const Trip: React.FC = () => {
     }
 
     const getList = async () => {
+        const listplan: string[] = []
+        listplan.push(String(params.get('type')))
         try {
             const response = await axios.post('/api/tourism/itinerary', {
                 location: location,
-                with: params.get('with'),
-                day: params.get('day')
+                days: params.get('day'),
+                    with: params.get('with'),
+                    budget: (Number(params.get('money')) / 25000),
+                    travelType: listplan
             })
             console.log(response.data)
             setList(parseTextToItinerary(response.data))
@@ -80,10 +64,11 @@ const Trip: React.FC = () => {
     }
 
     const getImage = async () => {
+        
         try {
             const response = await axios.get('/api/tourism/photos', {
                 params: {
-                    location: location,
+                    location: location
                 }
             })
             //console.log(response.data)
@@ -151,48 +136,16 @@ const Trip: React.FC = () => {
 
         if (title) itinerary.push({ title, morning, afternoon, evening });
 
-        // for (const day of days) {
-        //     const lines = day.split("\n").map(line => line.trim()).filter(line => line.length > 0);
-
-        //     if (lines.length > 0) {
-        //         let title = lines[0].replace('**', "");
-        //         title = title.replace('*', "");
-        //         const morning: TimeLine[] = [];
-        //         const afternoon: TimeLine[] = [];
-        //         const evening: TimeLine[] = [];
-
-        //         for (const line of lines.slice(1)) {
-        //             const separatorIndex = line.indexOf(": ");
-        //             if (separatorIndex !== -1) {
-        //                 const time = line.slice(0, separatorIndex).trim().replace('*', "");;
-        //                 const activity = line.slice(separatorIndex + 1).trim();
-
-        //                 if (time.includes("AM") || time.toLowerCase().includes("morning")) {
-        //                     morning.push({ hours: time, activity });
-        //                 } else if (time.includes("PM") && !time.startsWith("5") && !time.startsWith("7")) {
-        //                     afternoon.push({ hours: time, activity });
-        //                 } else {
-        //                     evening.push({ hours: time, activity });
-        //                 }
-        //             }
-        //             else if (line.length > 10) {
-        //                 morning.push({ hours: line, activity: "" })
-        //             }
-        //         }
-
-        //         itinerary.push({ title, morning, afternoon, evening });
-        //     }
-        // }
-        //console.log(itinerary)
         return itinerary;
     }
 
-    //console.log(list)
+    console.log(location)
 
     return (
         <div className="w-full flex flex-col items-center justify-center">
             <Header />
-            <div className="max-w-[1024px] w-full min-w-[320px] flex flex-col justify-center">
+            <Suspense>
+                <div className="max-w-[1024px] w-full min-w-[320px] flex flex-col justify-center">
                 <div className="flex flex-col mt-10 gap-4">
                     <div className="text text-center md:text-left">
                         <h2 className="text-2xl md:text-4xl font-bold">
@@ -213,9 +166,11 @@ const Trip: React.FC = () => {
                     <Itinerary list={list} />
                 </div>
             </div>
+            </Suspense>
+            
         </div>
 
     );
 };
 
-export default Trip;
+export default ListTrip;

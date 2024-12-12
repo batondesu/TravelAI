@@ -18,7 +18,7 @@ const GeneratePlanButton = () => {
                   text-sm
                   font-semibold rounded-3xl"
     >
-      {"Make A Plan Now"}
+      {"Tạo một lịch trình ngay bây giờ"}
     </Button>
   );
 };

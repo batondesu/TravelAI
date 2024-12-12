@@ -17,19 +17,19 @@ const Banner = () => {
           className="font-bold lg:text-7xl md:text-5xl text-4xl font-sans
       text-left w-full"
         >
-          Uncover the <br /> <span className="text-blue-500">AI</span> Travel{" "}
-          <span className="text-blue-500">Plan</span>
+          Khám phá <br /> <span className="text-blue-500">AI</span> Kế hoạch{" "}
+          <span className="text-blue-500">Du lịch</span>
         </h1>
 
         <div className="mt-5 lg:mt-10 rounded-md w-full text-left lg:text-lg md:text-md text-base">
           <div className="flex justify-start  items-center">
             <Lightbulb className="mr-1 text-yellow-600" />
-            <span className="text-center ">Imagine telling your travel planner,</span>
+            <span className="text-center ">Tưởng tượng kế hoạch du lịch của bạn,</span>
           </div>
           <div className="p-2">
             <p className="text-blue-500 font-bold tracking-wide lg:text-md md:text-base text-sm">
-              'Weekend escape to a vibrant city, <br className="lg:hidden" />
-              with mid-range budget in summer.'
+              'Chuyến đi cuối tuần đến một thành phố sôi động, <br className="lg:hidden" />
+              ngân sách tầm trung vào hè.'
             </p>
             <p
               className="mt-5 mb-5 
@@ -40,9 +40,7 @@ const Banner = () => {
                         md:max-w-xl 
                         text-left"
             >
-              Our AI not only understands but crafts a personalized adventure. Discover local
-              secrets, savor culinary delights, and explore iconic landmarks with an itinerary
-              designed just for you.
+              AI của chúng tôi không chỉ hiểu mà còn tạo ra một cuộc phiêu lưu được cá nhân hóa. Khám phá những bí mật địa phương, thưởng thức những món ăn ngon và khám phá các địa danh mang tính biểu tượng với hành trình được thiết kế riêng cho bạn.
             </p>
           </div>
         </div>

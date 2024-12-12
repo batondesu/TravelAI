@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 import {Montserrat_Alternates} from "next/font/google";
 import {Analytics} from "@vercel/analytics/react";
-import {ThemeProvider} from "@/contexts/ThemeProvider";
 
 import Progress from "@/components/Progress";
 import {Toaster} from "@/components/ui/toaster";
@@ -42,17 +41,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
+        
           {children}
-          <Progress />
-          <Analytics />
-          <Toaster />
-        </ThemeProvider>
+          
       </body>
     </html>
   );

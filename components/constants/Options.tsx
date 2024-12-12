@@ -34,22 +34,22 @@ export interface BudgetOption {
     {
       id: 1,
       icon: "💵",
-      title: "Cheap",
-      desc: "Economize and Save",
+      title: "Rẻ",
+      desc: "Giá thành rẻ và tiết kiệm",
       value: "low"
     },
     {
       id: 2,
       icon: "💰",
-      title: "Moderate",
-      desc: "Balance Cost and Comfort",
+      title: "Trung bình",
+      desc: "Cân bằng chi phí và thoải mái",
       value: "medium"
     },
     {
       id: 3,
       icon: "💎",
-      title: "Luxury",
-      desc: "Indulge without Limits",
+      title: "Cao cấp",
+      desc: "Thỏa mãn mọi nhu cầu",
       value: "high"
     },
   ];
@@ -79,33 +79,33 @@ export interface BudgetOption {
     {
       id: 1,
       icon: "🚶",
-      title: "Solo",
-      desc: "Discovering on Your Own",
-      no: "1 Person",
+      title: "Một mình",
+      desc: "Tự mình khám phá",
+      no: "1 người",
       value: "alone"
     },
     {
       id: 2,
       icon: "💑",
-      title: "Partner",
-      desc: "Exploring with a Loved One",
-      no: "2 People",
+      title: "Cặp đôi",
+      desc: "Trải nghiệm cùng người thân yêu",
+      no: "2 người",
       value: "couple"
     },
     {
       id: 3,
       icon: "👨‍👩‍👧‍👦",
-      title: "Family",
-      desc: "Fun for All Ages",
-      no: "3 to 5 People",
+      title: "Gia đình",
+      desc: "Niềm vui với mọi lứa tuổi",
+      no: "3 - 5 người",
       value: "family"
     },
     {
       id: 4,
       icon: "🤝",
-      title: "Friends",
-      desc: "Adventure with Your Crew",
-      no: "5 to 10 People",
+      title: "Bạn bè",
+      desc: "Phiêu lưu cùng bạn bè",
+      no: "5 - 10 người",
       value: "friends"
     },
   ];
@@ -114,29 +114,29 @@ export interface BudgetOption {
     {
       id: 1,
       icon: "🏖️",
-      title: "Beach",
-      desc: "Coastal area with sand, water, and relaxation",
+      title: "Biển",
+      desc: "Khu vực ven biển với cát, sóng và thư giãn",
       value: "beach"
     },
     {
       id: 2,
       icon: "🏞️",
-      title: "Mountain",
-      desc: "High peaks and outdoor adventure",
+      title: "Núi",
+      desc: "Cuộc phiêu lưu ngoài trời",
       value: "mountain"
     },
     {
       id: 3,
       icon: "🌆",
-      title: "City",
-      desc: "Urban hub with culture and attractions",
+      title: "Thành phố",
+      desc: "Trung tâm đô thị với văn hóa và các điểm tham quan",
       value: "city"
     },
     {
       id: 4,
       icon: "🎭",
-      title: "Culture",
-      desc: "Rich in history, art, and traditions",
+      title: "Văn hoá",
+      desc: "Giàu lịch sử, nghệ thuật và truyền thống",
       value: "culture"
     },
   ];
