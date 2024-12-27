@@ -1,5 +1,4 @@
 import ItineraryDayHeader from "@/components/ItineraryDayHeader";
-import {Doc} from "@/convex/_generated/dataModel";
 import {Sun, Sunrise, Sunset, TrashIcon} from "lucide-react";
 import {ReactNode} from "react";
 

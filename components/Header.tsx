@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import {navlinks} from "@/lib/constants";
+
 import {cn} from "@/lib/utils";
 import {MapPinIcon} from "lucide-react";
 import {ThemeDropdown} from "@/components/ThemeDropdown";
-import FeedbackSheet from "@/components/common/FeedbackSheet";
 
 const Header = () => {
   
@@ -36,18 +35,7 @@ const Header = () => {
           <div className="hidden md:flex items-center flex-1 justify-center">
             <ul className="flex gap-8 items-center text-sm">
               
-                <>
-                  {navlinks.map((link) => (
-                    <li key={link.id} className="hover:underline cursor-pointer">
-                      <Link href={`/#${link.id}`}>{link.text}</Link>
-                    </li>
-                  ))}
-                  <li className="hover:underline cursor-pointer">
-                    <Link href="/plan" scroll>
-                      Plan
-                    </Link>
-                  </li>
-                </>
+              
              
             </ul>
           </div>
@@ -70,7 +58,7 @@ const Header = () => {
               <div className="flex justify-center items-center gap-2">
                 {/* {!isCurrentPathDashboard && !isCurrentPathHome && <PlanComboBox />} */}
                 
-                <FeedbackSheet />
+                
                 <ThemeDropdown />
                 
               </div>

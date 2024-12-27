@@ -7,20 +7,9 @@ import {
     SelectBudgetOptions,
     SelectNoOfPersons,
 } from '@/components/constants/Options';
-import {
-    Dialog,
-    DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
-    DialogClose,
-    DialogFooter,
-} from "@/components/ui/dialog";
+
 import { Input } from "@/components/ui/input";
-import { FcGoogle } from "react-icons/fc";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Button } from "@/components/ui/button";
-import toast from "react-hot-toast";
 
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header";

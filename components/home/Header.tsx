@@ -2,12 +2,10 @@
 
 import {SignInButton, UserButton} from "@clerk/nextjs";
 
-import {Loading} from "@/components/shared/Loading";
 // import DrawerWithDialog from "@/components/shared/DrawerWithDialog";
 import {cn} from "@/lib/utils";
 import {ThemeDropdown} from "@/components/ThemeDropdown";
-import FeedbackSheet from "@/components/common/FeedbackSheet";
-import Logo from "@/components/common/Logo";
+
 import MenuItems from "@/components/home/MenuItems";
 import MobileMenu from "@/components/home/MobileMenu";
 
@@ -21,7 +19,6 @@ const Header = () => {
     >
       <nav className="lg:px-20 px-5 py-3 mx-auto">
         <div className="flex justify-evenly w-full">
-          <Logo />
           <div className="hidden md:flex items-center justify-center">
             <ul className="flex gap-8 items-center text-sm">
               <MenuItems />
