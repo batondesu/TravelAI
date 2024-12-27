@@ -1,7 +1,5 @@
 "use client";
 
-import {SignInButton, UserButton} from "@clerk/nextjs";
-
 // import DrawerWithDialog from "@/components/shared/DrawerWithDialog";
 import {cn} from "@/lib/utils";
 import {ThemeDropdown} from "@/components/ThemeDropdown";
